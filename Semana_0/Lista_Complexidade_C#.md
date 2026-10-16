@@ -54,7 +54,7 @@ Lista de complexidade das Principais Estruturas e Algoritmos em C#, criada pelo 
 | Interseção | `set.IntersectWith(outro)` | Depende da implementação e tamanhos | — |
 | Percorrer | `foreach` | $O(n)$ | $O(n)$ |
 
-*\* Os custos de união e interseção dependem do tamanho dos conjuntos, das operações de hash e de como os elementos são comparados. Para entrevistas, priorize as operações básicas.*
+*Os custos de união e interseção dependem do tamanho dos conjuntos, das operações de hash e de como os elementos são comparados. Para entrevistas, priorize as operações básicas.*
 
 ---
 
@@ -121,7 +121,7 @@ Em C#, strings são **imutáveis**: operações que modificam seu conteúdo cria
 | Comparar strings | `a == b` | Até $O(n)$ |
 | Dividir em partes | `texto.Split(' ')` | Geralmente $O(n)$ (+ alocações) |
 
-*\* Onde $n$ é o tamanho do texto e $m$ é o tamanho do trecho buscado.*
+Onde $n$ é o tamanho do texto e $m$ é o tamanho do trecho buscado.*
 
 > **Dica de competição:** Para concatenar muitos fragmentos dentro de um loop, prefira `StringBuilder` para evitar o custo de alocações excessivas.
 
