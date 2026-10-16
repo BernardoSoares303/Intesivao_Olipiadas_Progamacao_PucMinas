@@ -24,7 +24,7 @@ Lista de complexidade das Principais Estruturas e Algoritmos em C#, criada pelo 
 | Inverter a ordem | `lista.Reverse()` | $O(n)$ |
 | Copiar a lista | `lista.ToArray()` | $O(n)$ |
 
-*`Add()` tem custo amortizado $O(1)$, mas pode chegar a $O(n)$ quando precisa redimensionar o array interno.*
+*`Add()` tem custo amortizado \(O(1)\), mas pode chegar a \(O(n)\) quando precisa redimensionar o array interno.*
 
 ---
 
