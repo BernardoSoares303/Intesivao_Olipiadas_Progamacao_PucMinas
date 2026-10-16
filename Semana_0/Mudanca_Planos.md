@@ -26,3 +26,26 @@ static int BuscarRec(int[] vetor, int indice, int alvo)
     return BuscarRec(vetor, indice + 1, alvo);
 }
 ```
+
+### Explicação da Solução
+
+```csharp
+    if(indice>=vetor.Length)
+            return -1;
+```
+A linha acima é o caso base. O caso base determina quando a função deve parar de chamar a si mesma. Sem essa condição, se o alvo não fosse encontrado, a função continuaria aumentando o índice até tentar acessar uma posição fora dos limites do vetor, causando um erro de execução.
+
+```csharp
+    if(vetor[indice] == alvo)
+            return indice;
+```
+Essa linha serve para verificar se o alvo é igual ao item armazenado na posição atual do indice do vetor.
+
+```csharp
+    return BuscarRec(vetor, indice + 1, alvo);
+```
+Essa é a chamada recursiva, que é o que faz a função chamar a si mesma. Para quem não sabe, uma função recursiva é uma função que resolve um problema por meio de chamadas a si mesma, dividindo-o em etapas menores.
+
+Neste caso, a função chama a si mesma para verificar a próxima posição do vetor, criando uma pilha de execução em que cada chamada verifica um elemento. Quando o alvo é encontrado ou o caso base é atingido, as chamadas começam a ser encerradas.
+
+O **indice + 1** é o que faz a busca avançar pelo vetor, passando para a próxima posição a cada chamada recursiva.
