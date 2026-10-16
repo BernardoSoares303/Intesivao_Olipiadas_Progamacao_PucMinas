@@ -57,60 +57,60 @@ Chguei em 2 soluções uma mais simples porem só fazia 4/5 e outra mais complex
 ### Solução Simples
 
 ```csharp
-    using System;
-    public class Program {
-        public static void Main() {
-            string palavra = Console.ReadLine();
+using System;
+public class Program {
+    public static void Main() {
+        string palavra = Console.ReadLine();
 
-            palavra = palavra.Replace(" ","").ToLower();
+        palavra = palavra.Replace(" ","").ToLower();
 
-            if(EhPalindromo(palavra, 0, palavra.Length - 1)){
-                Console.Write("SIM");
-            }else{
-                Console.Write("NAO");
-            }
-        }
-
-        public static bool EhPalindromo(string palavra, int p1, int p2){
-            if(p1 >= p2)
-                return true;
-            if(palavra[p1] != palavra[p2])
-                return false;
-            
-            return EhPalindromo(palavra, p1 + 1, p2 - 1);
+        if(EhPalindromo(palavra, 0, palavra.Length - 1)){
+            Console.Write("SIM");
+        }else{
+            Console.Write("NAO");
         }
     }
+
+    public static bool EhPalindromo(string palavra, int p1, int p2){
+        if(p1 >= p2)
+            return true;
+        if(palavra[p1] != palavra[p2])
+            return false;
+        
+        return EhPalindromo(palavra, p1 + 1, p2 - 1);
+    }
+}
 ```
 
 ### Solução Complexa
 
 ```csharp
-    using System;
-    public class Program {
-        public static void Main() {
-            string palavra = Console.ReadLine();
+using System;
+public class Program {
+    public static void Main() {
+        string palavra = Console.ReadLine();
 
-            palavra = palavra.Replace(" ", "").ToLower();;
+        palavra = palavra.Replace(" ", "").ToLower();;
 
-            if(EhPalindromo(palavra, 0, palavra.Length - 1)){
-                Console.Write("SIM");
-            }else{
-                Console.Write("NAO");
-            }
-        }
-
-        public static bool EhPalindromo(string palavra, int p1, int p2){
-            
-                if (p1 >= p2) 
-                    return true;
-
-                if (!char.IsLetterOrDigit(palavra[p1]))
-                    return EhPalindromo(palavra, p1 + 1, p2);
-
-                if (!char.IsLetterOrDigit(palavra[p2]))
-                    return EhPalindromo(palavra, p1, p2 - 1);
-
-                return char.ToLowerInvariant(palavra[p1]) == char.ToLowerInvariant(palavra[p2]) && EhPalindromo(palavra, p1 + 1, p2 - 1);
+        if(EhPalindromo(palavra, 0, palavra.Length - 1)){
+            Console.Write("SIM");
+        }else{
+            Console.Write("NAO");
         }
     }
+
+    public static bool EhPalindromo(string palavra, int p1, int p2){
+        
+            if (p1 >= p2) 
+                return true;
+
+            if (!char.IsLetterOrDigit(palavra[p1]))
+                return EhPalindromo(palavra, p1 + 1, p2);
+
+            if (!char.IsLetterOrDigit(palavra[p2]))
+                return EhPalindromo(palavra, p1, p2 - 1);
+
+            return char.ToLowerInvariant(palavra[p1]) == char.ToLowerInvariant(palavra[p2]) && EhPalindromo(palavra, p1 + 1, p2 - 1);
+    }
+}
 ```
