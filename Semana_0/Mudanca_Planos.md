@@ -49,3 +49,68 @@ Essa é a chamada recursiva, que é o que faz a função chamar a si mesma. Para
 Neste caso, a função chama a si mesma para verificar a próxima posição do vetor, criando uma pilha de execução em que cada chamada verifica um elemento. Quando o alvo é encontrado ou o caso base é atingido, as chamadas começam a ser encerradas.
 
 O **indice + 1** é o que faz a busca avançar pelo vetor, passando para a próxima posição a cada chamada recursiva.
+
+## Atividade 2: Escreva um programa que leia uma linha de texto e determine se ela é um palíndromo usando função recursiva.
+
+Chguei em 2 soluções uma mais simples porem só fazia 4/5 e outra mais complexa que faz 5/5
+
+### Solução Simples
+
+```csharp
+    using System;
+    public class Program {
+        public static void Main() {
+            string palavra = Console.ReadLine();
+
+            palavra = palavra.Replace(" ","").ToLower();
+
+            if(EhPalindromo(palavra, 0, palavra.Length - 1)){
+                Console.Write("SIM");
+            }else{
+                Console.Write("NAO");
+            }
+        }
+
+        public static bool EhPalindromo(string palavra, int p1, int p2){
+            if(p1 >= p2)
+                return true;
+            if(palavra[p1] != palavra[p2])
+                return false;
+            
+            return EhPalindromo(palavra, p1 + 1, p2 - 1);
+        }
+    }
+```
+
+### Solução Complexa
+
+```csharp
+    using System;
+    public class Program {
+        public static void Main() {
+            string palavra = Console.ReadLine();
+
+            palavra = palavra.Replace(" ", "").ToLower();;
+
+            if(EhPalindromo(palavra, 0, palavra.Length - 1)){
+                Console.Write("SIM");
+            }else{
+                Console.Write("NAO");
+            }
+        }
+
+        public static bool EhPalindromo(string palavra, int p1, int p2){
+            
+                if (p1 >= p2) 
+                    return true;
+
+                if (!char.IsLetterOrDigit(palavra[p1]))
+                    return EhPalindromo(palavra, p1 + 1, p2);
+
+                if (!char.IsLetterOrDigit(palavra[p2]))
+                    return EhPalindromo(palavra, p1, p2 - 1);
+
+                return char.ToLowerInvariant(palavra[p1]) == char.ToLowerInvariant(palavra[p2]) && EhPalindromo(palavra, p1 + 1, p2 - 1);
+        }
+    }
+```
