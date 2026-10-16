@@ -10,3 +10,19 @@ Como ao invez de semanas terei dias para me preparar hoje vou tentar fazer algun
 
 ## Meta do dia 1:
 Fazer pelo menos 3 das atividades do humberto vou colar nesse Markdown as perguntas é a minha solução.
+
+## Atividade 1: Implemente uma função recursiva que busca um valor num vetor a partir de um índice, retornando a posição onde foi encontrado ou -1 caso não exista.
+
+### Solução
+
+```csharp
+static int BuscarRec(int[] vetor, int indice, int alvo)
+{
+    if(indice>=vetor.Length)
+        return -1;
+    if(vetor[indice] == alvo)
+        return indice;
+    
+    return BuscarRec(vetor, indice + 1, alvo);
+}
+```
