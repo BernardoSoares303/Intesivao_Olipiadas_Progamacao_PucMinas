@@ -25,4 +25,4 @@ Se você chegou até aqui, obrigado por perder alguns minutos da sua vida lendo 
 
 ---
 
-> **Disclaimer:** Tentei usar o minimo de ia na confecção deste texto, mas certas partes pedi pra ela escrever pois fiquei com preguiça. Pesso um desconto porque poxa acabei de voltar do trabalho e ainda não almocei porque estou escrevendo isso.
+> **Disclaimer:** Tentei usar o minimo de ia na confecção deste texto, mas certas partes pedi pra ela escrever pois fiquei com preguiça. Peço um desconto porque poxa acabei de voltar do trabalho e ainda não almocei porque estou escrevendo isso.
